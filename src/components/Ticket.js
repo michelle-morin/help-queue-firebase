@@ -10,9 +10,11 @@ function Ticket(props){
 
   return (
     <React.Fragment>
-      <div style={ticketStyles}>
-        <h3>{props.location} - {props.names}</h3>
-        <p><em>{props.issue}</em></p>
+      <div onClick = {() => props.whenTicketClicked(props.id)}>
+        <div style={ticketStyles}>
+          <h3>{props.location} - {props.names}</h3>
+          <p><em>{props.issue}</em></p>
+        </div>
       </div>
     </React.Fragment>
   );
@@ -21,7 +23,9 @@ function Ticket(props){
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  issue: PropTypes.string
+  issue: PropTypes.string,
+  id: PropTypes.string,
+  whenTicketClicked: PropTypes.func
 };
 
 export default Ticket;
