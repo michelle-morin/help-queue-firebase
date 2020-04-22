@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 function TicketList(props){
   return (
     <React.Fragment>
-      <hr/>
       {props.ticketList.map((ticket, index) =>
         <Ticket names={ticket.names}
           location={ticket.location}

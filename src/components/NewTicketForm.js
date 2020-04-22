@@ -10,13 +10,15 @@ function NewTicketForm(props){
   }
 
   const newTicketFormStyles = {
+    width: '40vw',
+    margin: 'auto auto',
     backgroundColor: '#f5f5f5',
     outline: 'none',
     boxShadow: 'none',
     padding: '5%',
-    margin: 'auto auto',
-    border: '1px solid #111111',
-    borderRadius: '10px'
+    border: '1px solid #008081',
+    borderRadius: '5px',
+    marginBottom: '2%'
   }
 
   return (
@@ -37,7 +39,7 @@ function NewTicketForm(props){
             name='issue'
             placeholder='Describe your issue.' />
           <br/>
-          <button type='submit'>Help!</button>
+          <button className="buttonStyles" type='submit'>Help!</button>
         </form>
       </div>
     </React.Fragment>

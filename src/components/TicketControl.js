@@ -32,6 +32,7 @@ class TicketControl extends React.Component {
       currentlyVisibleState = <TicketList ticketList={this.state.masterTicketList} />
       buttonText = "Add Ticket";
     }
+
     return (
       <React.Fragment>
         {currentlyVisibleState}
