@@ -2,11 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Ticket(props){
+
+  const ticketStyles = {
+    borderBottom: '1px solid #008081',
+    padding: '2%'
+  }
+
   return (
     <React.Fragment>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
-      <hr/>
+      <div style={ticketStyles}>
+        <h3>{props.location} - {props.names}</h3>
+        <p><em>{props.issue}</em></p>
+      </div>
     </React.Fragment>
   );
 }
