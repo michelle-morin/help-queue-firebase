@@ -7,8 +7,18 @@
 
 This application is a simple ticketing system that allows students to request help from instructors, and allows instructors to determine the students' location in the classroom, the issue to be resolved, and the status of the help ticket. 
 
+Example user stories:
+* As a user, I should be able to create a new help ticket
+* As a user, I should be able to view (read) all existing help tickets
+* As a user, I should be able to view (read) details for a specific help ticket
+* As a user, I should be able to update an existing help ticket
+* As a user, I should be able to delete an existing help ticket
+
 React component structure:
 ![component structure](/component-structure.png)
+
+Component diagram after adding update functionality:
+![component structure](/updated-component-structure.png)
 
 ## Setup/Installation Requirements
 
