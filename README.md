@@ -1,7 +1,6 @@
 # Help Queue
 
-#### React ticketing system, April 19, 2020
-#### By: _**Michelle Morin**_
+#### React ticketing system, By: _**Michelle Morin**_
 
 ## Description
 
