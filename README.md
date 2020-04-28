@@ -55,6 +55,8 @@ _Open the contents of this repository in a text editor or IDE of your choice (e.
 
 * Git
 * React
+* Redux
+* React-Redux
 * JavaScript
 * JSX
 * npm
