@@ -42,9 +42,19 @@ _Confirm that you have navigated to the help-queue project directory (e.g., by e
 
 _Next, install npm at the project's root directory by entering the following commands in Terminal (macOS) or PowerShell (Windows):_
 * ``npm install``
-* ``npm start``
 
 _Open the contents of this repository in a text editor or IDE of your choice (e.g., to open the contents of the directory in Visual Studio Code on macOS, enter the command ``code .`` in Terminal)._
+
+_Next, creare a [Firebase project](https://firebase.google.com/) with a Firestore database. Create a .env file at the project's root directory and add the following to the .ev file, replacing the placeholder values with the value of each key from your own Firebase application:_
+REACT_APP_FIREBASE_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+REACT_APP_FIREBASE_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+REACT_APP_FIREBASE_DATABASE_URL = "https://YOUR-PROJECT-NAME.firebaseio.com"
+REACT_APP_FIREBASE_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+REACT_APP_FIREBASE_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+REACT_APP_FIREBASE_APP_ID = "YOUR-PROJECT-APP-ID"
+
+_To view this application in a web browser, enter the command ``npm start`` in the terminal._
 
 ## Technologies Used
 
@@ -56,7 +66,8 @@ _Open the contents of this repository in a text editor or IDE of your choice (e.
 * JSX
 * npm
 * Webpack
-* Firebase/Firestore
+* Firebase
+* Firestore database
 
 ### License
 
