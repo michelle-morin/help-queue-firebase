@@ -1,6 +1,5 @@
 import ticketListReducer from '../../reducers/ticket-list-reducer';
 import * as c from './../../actions/ActionTypes';
-import Moment from 'moment';
 
 describe('ticketListReducer', ()=> {
 
@@ -27,29 +26,6 @@ describe('ticketListReducer', ()=> {
 
   test('should return default state if there is no action type passed into the reducer', ()=> {
     expect(ticketListReducer({}, { type: null })).toEqual({});
-  });
-
-  test('should successfully add new ticket data to masterTicketList', ()=> {
-    const { names, location, issue, timeOpen, id } = ticketData;
-    action = {
-      type: c.ADD_TICKET,
-      names: names,
-      location: location,
-      issue: issue,
-      timeOpen: timeOpen,
-      id: id,
-      formattedWaitTime: new Moment().fromNow(true)
-    }
-    expect(ticketListReducer({}, action)).toEqual({
-      [id] : {
-        names: names,
-        location: location,
-        issue: issue,
-        timeOpen: timeOpen,
-        id: id,
-        formattedWaitTime: 'a few seconds'
-      }
-    });
   });
 
   test('should successfully delete a ticket', ()=> {
