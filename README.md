@@ -61,6 +61,7 @@ _Open the contents of this repository in a text editor or IDE of your choice (e.
 * JSX
 * npm
 * Webpack
+* Firebase/Firestore
 
 ### License
 
