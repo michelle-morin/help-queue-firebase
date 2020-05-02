@@ -28,15 +28,6 @@ class TicketControl extends React.Component {
     clearInterval(this.waitTimeUpdateTimer);
   }
 
-  updateTicketElapsedWaitTime = () => {
-    const { dispatch } = this.props;
-    Object.values(this.props.masterTicketList).forEach(ticket => {
-      const newFormattedWaitTime = ticket.timeOpen.fromNow(true);
-      const action = a.updateTime(ticket.id, newFormattedWaitTime);
-      dispatch(action);
-    });
-  }
-
   handleClick = () => {
     if (this.state.selectedTicket != null) {
       this.setState({
@@ -70,9 +61,7 @@ class TicketControl extends React.Component {
   }
 
   handleDeletingTicket = (id) => {
-    const { dispatch } = this.props;
-    const action = a.deleteTicket(id);
-    dispatch(action);
+    this.props.firestore.delete({collection: 'tickets', doc: id});
     this.setState({selectedTicket: null});
   }
 
@@ -107,7 +96,6 @@ class TicketControl extends React.Component {
       buttonText = "Return to Ticket List";
     } else {
       currentlyVisibleState = <TicketList 
-        ticketList={this.props.masterTicketList} 
         onTicketSelection={this.handleChangingSelectedTicket} />
       buttonText = "Add Ticket";
     }
@@ -122,7 +110,7 @@ class TicketControl extends React.Component {
 }
 
 TicketControl.propTypes = {
-  masterTicketList: PropTypes.object
+  formVisibleOnPage: PropTypes.bool
 }
 
 const mapStateToProps = state => {
