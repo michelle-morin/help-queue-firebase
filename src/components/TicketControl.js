@@ -7,6 +7,17 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as a from './../actions';
 import { withFirestore, isLoaded } from 'react-redux-firebase'
+import styled from 'styled-components';
+
+const TicketControlWrapper = styled.section`
+  position: relative;
+  background-color: white;
+  color: #008081;
+  position: fixed;
+  top: 25vh;
+  left: 0;
+  width: 100%;
+`;
 
 class TicketControl extends React.Component {
   constructor(props) {
@@ -70,16 +81,16 @@ class TicketControl extends React.Component {
     const auth = this.props.firebase.auth();
     if (!isLoaded(auth)) {
       return (
-        <React.Fragment>
+        <TicketControlWrapper>
           <h1>Loading...</h1>
-        </React.Fragment>
+        </TicketControlWrapper>
       )
     }
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
       return (
-        <React.Fragment>
+        <TicketControlWrapper>
           <h1>You must be signed in to access the queue.</h1>
-        </React.Fragment>
+        </TicketControlWrapper>
       )
     } 
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
@@ -106,10 +117,10 @@ class TicketControl extends React.Component {
       }
   
       return (
-        <React.Fragment>
+        <TicketControlWrapper>
           {currentlyVisibleState}
           <button onClick={this.handleClick}>{buttonText}</button>
-        </React.Fragment>
+        </TicketControlWrapper>
       );
     }
   }

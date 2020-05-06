@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from "firebase/app";
+import styled from 'styled-components';
 
 function Signin(){
 
@@ -33,8 +34,18 @@ function Signin(){
     });
   }
 
+  const SignInWrapper = styled.section`
+  position: relative;
+  background-color: white;
+  color: #008081;
+  position: fixed;
+  top: 25vh;
+  left: 0;
+  width: 100%;
+`;
+
   return (
-    <React.Fragment>
+    <SignInWrapper>
       <h1>Sign Up</h1>
       <form onSubmit={doSignUp}>
         <input
@@ -61,7 +72,7 @@ function Signin(){
       </form>
       <h1>Sign Out</h1>
       <button onClick={doSignOut}>Sign out</button>
-    </React.Fragment>
+    </SignInWrapper>
   );
 }
 
